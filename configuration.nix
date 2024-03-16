@@ -11,7 +11,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.xremap-flake.nixosModules.default
-    ./modules/hosts.nix # if u have any websites to block
   ];
 
   services.xremap = {
@@ -133,16 +132,8 @@
       fira
       roboto
       ubuntu_font_family
-      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "FantasqueSansMono"];})
     ];
-
-    fontconfig = {
-      defaultFonts = {
-        serif = ["Roboto"];
-        sansSerif = ["Fira Sans"];
-        monospace = ["JetBrainsMono Nerd Font"];
-      };
-    };
   };
 
   # Allow unfree packages
